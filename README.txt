@@ -1,3 +1,16 @@
+====================================
+=	Coloring Book Project	   =
+=	Code: Mark Vassel	   =
+=	Research: Noah Leiter	   =
+=				   =
+= See below for instruction on use =
+=				   =
+=	Free to the public	   =
+=		Enjoy!		   =
+====================================
+
+
+
 How to run the code.
 
 1. Access/go into the edge directory (cd Edge)
