@@ -15,7 +15,8 @@ int main(int argc, char *argv[]){
     cimg_library::CImg<> edge_Img_y2;
     cimg_library::CImg<> edge_Img_x_y2;
     cimg_library::CImg<> thresh;
-    
+    cimg_library::CImg<> I;
+
 
 
     //print out the usage if the user enters the wrong number of cmd inputs
@@ -40,13 +41,13 @@ int main(int argc, char *argv[]){
 
         //call the function to convert
         start = std::clock();
-        edge_detection(image,grayscale_image,output_image,edge_Img_x,edge_Img_y,edge_Img_x_y,edge_Img_x_y2,edge_Img_x2,edge_Img_y2);
+        edge_detection(image,I,grayscale_image,output_image,edge_Img_x,edge_Img_y,edge_Img_x_y,edge_Img_x_y2,edge_Img_x2,edge_Img_y2);
         std::cout << "Time taken to convert the rgb image to grayscale: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
 
         //(image,edge_Img_x,edge_Img_y,edge_Img_x_y,edge_Img_x2,edge_Img_y2,edge_Img_x_y2).display("Original, Edge_x, Edge_y, Magnitude,(Bonus->Sobel filters applied twice)");
-
+        (image,edge_Img_x_y2).display();
 	thresh_img(edge_Img_x_y, thresh);
-	
+
 	(image, thresh).display("New img");
 
 
@@ -56,4 +57,3 @@ int main(int argc, char *argv[]){
     return 0;
 
 }
-
